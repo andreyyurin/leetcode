@@ -1,14 +1,15 @@
 class Solution {
     fun kthCharacter(k: Long, operations: IntArray): Char {
         var length = 1.0
-        for (i in 1 .. operations.size) {
+
+        for (i in 0 until operations.size) {
             length *= 2
         }
 
         var j = operations.size - 1
         var tk = k - 1.0
         var step = 0
-        
+
         while(j >= 0) {
             val half = length / 2
             val operation = operations[j]
@@ -23,11 +24,6 @@ class Solution {
             j--
         }
 
-       /*
-       a ab abab
-       ab-ab
-
-       */ 
         return 'a' + step % 26
     }
 }
