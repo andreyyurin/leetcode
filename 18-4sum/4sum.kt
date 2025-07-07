@@ -1,4 +1,11 @@
 class Solution {
+    // Так себе задача, как и решение
+    // Берем 1ое значение, 0 .. nums
+    // 2ое также 0 .. nums
+    // 3, 4ое через два указателя
+    // Если сумма больше target right --
+    // Если сумма меньше target left ++
+    // Если наткнулся на эту задачу снова, glhf
     fun fourSum(nums: IntArray, target: Int): List<List<Int>> {
         nums.sort()
         val map = mutableMapOf<Int, MutableList<Int>>()
