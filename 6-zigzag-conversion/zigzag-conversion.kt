@@ -13,7 +13,6 @@ class Solution {
         }
 
         var res = ""
-        print(result)
         for(i in 0 until result.size) {
             if (i == 0) res = res + result[i]
             else res = res + "${result[i]}"
