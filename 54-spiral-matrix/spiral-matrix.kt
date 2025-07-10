@@ -7,7 +7,7 @@ class Solution {
         var j = 0
 
         var canGo = true
-        var result = mutableListOf<Int>()
+        var result = LinkedList<Int>()
         var dir = Dir.right
         
         var x = matrix.size
@@ -33,7 +33,6 @@ class Solution {
             if(matrix[i][j] != Int.MAX_VALUE) result.add(matrix[i][j])
             matrix[i][j] = Int.MAX_VALUE
 
-            
             when(dir) {
                 Dir.right -> {
                     if (j + 1 < y && matrix[i][j + 1] != Int.MAX_VALUE) {
