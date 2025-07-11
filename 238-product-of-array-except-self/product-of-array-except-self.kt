@@ -3,21 +3,47 @@ class Solution {
         var point = 1
         var counterZero = 0
         var counterMinus = 0
-        nums.forEach {
-            if (it == 0) {
-                counterZero++
+        var l = 0
+        var r = nums.size - 1
+        while(l <= r) {
+            if(l == r) {
+                if (nums[l] == 0) {
+                    counterZero++
+                } else {
+                    point *= nums[l]
+                }
+                if (nums[l] < 0) {
+                    counterMinus++
+                }
             } else {
-                point *= it
+                if (nums[r] == 0) {
+                    counterZero++
+                } else {
+                    point *= nums[r]
+                }
+                if (nums[r] < 0) {
+                    counterMinus++
+                }
+
+                if (nums[l] == 0) {
+                    counterZero++
+                } else {
+                    point *= nums[l]
+                }
+                if (nums[l] < 0) {
+                    counterMinus++
+                }
             }
-            if (it < 0) {
-                counterMinus++
-            }
+
+            l++
+            r--
         }
+        
 
         val list = IntArray(nums.size)
 
-        var l = 0
-        var r = nums.size - 1
+        l = 0
+        r = nums.size - 1
         while(l <= r) {
             if (l == r) {
                 if(nums[l] == 0 && counterZero > 1) {
