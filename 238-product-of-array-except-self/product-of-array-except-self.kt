@@ -14,7 +14,7 @@ class Solution {
             }
         }
 
-        val list = mutableListOf<Int>()
+        val list = LinkedList<Int>()
 
         nums.forEach {
             if(it == 0 && counterZero > 1) {
