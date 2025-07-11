@@ -15,15 +15,17 @@ class Solution {
         for (i in 0 until matrix.size) {
             for (j in 0 until matrix[i].size) {
                 if (matrix[i][j] == 0) {
-                    if(rowMem[i] != true){
+                    if(rowMem[j] != true){
                         for (kI in 0 until matrix.size) {
                             tempMatrix[kI][j] = "$"
                         }
+                        rowMem[j] = true
                     }
-                    if(columnMem[j] != true){
+                    if(columnMem[i] != true){
                         for (kJ in 0 until matrix[i].size) {
                             tempMatrix[i][kJ] = "$"
                         }
+                        columnMem[i] = true
                     }
                 }
             }
