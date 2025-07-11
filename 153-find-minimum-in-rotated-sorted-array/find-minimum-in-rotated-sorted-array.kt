@@ -8,15 +8,14 @@ class Solution {
         var mid = l + (r - l) / 2
         while(l <= r) {
             mid = l + (r - l) / 2
-            print("$mid - ")
             if (nums[mid] > nums[r]) {
                 l = mid + 1
             } else if(nums[mid] > nums[l]){
                 r = mid - 1
             } else {
                 r--
+                l++
             }
-            println()
         }
         return nums[mid]
     }
