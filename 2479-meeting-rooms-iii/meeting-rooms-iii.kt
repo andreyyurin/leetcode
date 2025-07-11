@@ -5,14 +5,13 @@ class Solution {
         val mapRooms = mutableMapOf<Int, Long>()
 
         for(i in meetings) {
-            var minTime = Long.MAX_VALUE
             var weFindRoom = false
-            var minIndex = Long.MAX_VALUE
+            var minIndex = 0
             var minEnd = Long.MAX_VALUE
             for(j in 0 until rooms.size) {
                 if (rooms[j] < minEnd) {
                     minEnd = rooms[j]
-                    minIndex = j.toLong()
+                    minIndex = j
                 }
                 if (i[0] >= rooms[j]) {
                     mapRooms[j] = (mapRooms[j] ?: 0) + 1
@@ -22,8 +21,8 @@ class Solution {
                 }
             }
             if (!weFindRoom) {
-                rooms[minIndex.toInt()] = minEnd + (i[1] - i[0])
-                mapRooms[minIndex.toInt()] = (mapRooms[minIndex.toInt()] ?: 0) + 1
+                rooms[minIndex] = minEnd + (i[1] - i[0])
+                mapRooms[minIndex] = (mapRooms[minIndex] ?: 0) + 1
             }
         }
 
