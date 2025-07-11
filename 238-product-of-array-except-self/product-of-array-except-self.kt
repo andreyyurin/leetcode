@@ -14,26 +14,26 @@ class Solution {
             }
         }
 
-        val list = LinkedList<Int>()
+        val list = IntArray(nums.size)
 
-        nums.forEach {
+        nums.forEachIndexed { index, it ->
             if(it == 0 && counterZero > 1) {
-                list.add(0)
+                list[index] = (0)
             } else if (it == 0 && counterZero == 1) {
-                list.add(point)
+                list[index] = (point)
             } else if(counterZero > 0) {
-                list.add(0)
+                list[index] = (0)
             } else if (it < 0) {
                 if (counterMinus - 1 % 2 == 0) {
-                    list.add(point / it)
+                    list[index] = (point / it)
                 } else {
-                    list.add(point / it)
+                    list[index] = (point / it)
                 }
             } else {
-                list.add(point / it)
+                list[index] = point / it
             }
         }
         
-        return list.toIntArray()
+        return list
     }
 }
