@@ -5,9 +5,10 @@ class Solution {
 
         folder.forEach { fol ->
             var contains = false
-            list.forEach {
-                if (fol.startsWith(it)) {
+            for (i in list) {
+                if (fol.startsWith(i)) {
                     contains = true
+                    break
                 }
             }
             if (!contains) {
