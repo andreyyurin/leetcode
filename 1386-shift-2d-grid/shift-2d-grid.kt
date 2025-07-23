@@ -2,7 +2,7 @@ class Solution {
     fun shiftGrid(grid: Array<IntArray>, k: Int): List<List<Int>> {
         val size = grid.size * grid[0].size
         val shift = k % size 
-        val newGrid = Array(grid.size) { i -> IntArray(grid[i].size) { grid[i][it] }}
+        val newGrid = MutableList(grid.size) { MutableList(grid[0].size) { 0 } }
         var t = 0
         if (shift == 0) return grid.map { it.toList() }
 
@@ -20,6 +20,6 @@ class Solution {
             t++
         }
 
-        return newGrid.map { it.toList() }
+        return newGrid
     }
 }
