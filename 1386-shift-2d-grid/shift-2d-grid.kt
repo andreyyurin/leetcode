@@ -1,10 +1,8 @@
 class Solution {
     fun shiftGrid(grid: Array<IntArray>, k: Int): List<List<Int>> {
         val size = grid.size * grid[0].size
-        println("n=${grid.size}; m=${grid[0].size}")
         val shift = k % size 
         val newGrid = Array(grid.size) { i -> IntArray(grid[i].size) { grid[i][it] }}
-        println("shift = $shift; k = $k; size = $size")
         var t = 0
         if (shift == 0) return grid.map { it.toList() }
 
@@ -16,7 +14,6 @@ class Solution {
             } else {
                 t - shift
             }
-            println("$i $j")
             val iNext = tNext / grid[0].size
             val jNext = tNext % grid[0].size
             newGrid[i][j] = grid[iNext][jNext]
