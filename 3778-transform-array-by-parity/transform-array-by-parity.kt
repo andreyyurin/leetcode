@@ -1,13 +1,14 @@
 class Solution {
     fun transformArray(nums: IntArray): IntArray {
+        val even = mutableListOf<Int>()
+        val odd = mutableListOf<Int>()
         for(i in 0 until nums.size) {
             if (nums[i] % 2 == 0) {
-                nums[i] = 0
+                even.add(0)
             } else {
-                nums[i] = 1
+                odd.add(1)
             }
         }   
-        nums.sort()
-        return nums
+        return (even + odd).toIntArray()
     }
 }
