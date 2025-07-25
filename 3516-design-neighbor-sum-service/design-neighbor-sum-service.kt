@@ -1,7 +1,7 @@
 class NeighborSum(private val grid: Array<IntArray>) {
     var sum = 0
 
-    private val map = mutableMapOf<Int, Pair<Int, Int>>()
+    private val map = hashMapOf<Int, Pair<Int, Int>>()
     init {
         for (i in 0 until grid.size) {
             for (j in 0 until grid[i].size) {
