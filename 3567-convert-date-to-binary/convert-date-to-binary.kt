@@ -1,18 +1,18 @@
 class Solution {
     fun convertDateToBinary(date: String): String {
-        var temp = ""
-        var res = StringBuilder()
+        val temp = StringBuilder()
+        val res = StringBuilder()
 
         date.forEach {
             if (it == '-') {
-                res.append(temp.toInt().toBinary())
+                res.append(temp.toString().toInt().toBinary())
                 res.append('-')
-                temp = ""
+                temp.clear()
             } else {
-                temp += it
+                temp.append(it)
             }
         }
-        res.append(temp.toInt().toBinary())
+        res.append(temp.toString().toInt().toBinary())
         return res.toString()
     }
 
