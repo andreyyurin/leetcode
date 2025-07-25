@@ -28,21 +28,15 @@ class NeighborSum(private val grid: Array<IntArray>) {
 
         val (i, j) = map[value]!!
 
-        dia(i + 1, j + 1)
-        dia(i + 1, j - 1)
-        dia(i - 1, j + 1)
-        dia(i - 1, j - 1)
+        adj(i + 1, j + 1)
+        adj(i + 1, j - 1)
+        adj(i - 1, j + 1)
+        adj(i - 1, j - 1)
 
         return sum
     }
 
     private fun adj(i: Int, j: Int) {
-        if (i < 0 || i >= grid.size) return
-        if (j < 0 || j >= grid[i].size) return
-        sum += grid[i][j]
-    }
-
-    private fun dia(i: Int, j: Int) {
         if (i < 0 || i >= grid.size) return
         if (j < 0 || j >= grid[i].size) return
         sum += grid[i][j]
