@@ -9,7 +9,7 @@ class Solution {
                 num.add(nums[i])
             }
         }
-        println(num)
+        
         val hill = IntArray(num.size) { 0 }
 
         for (i in 1 until num.size - 1) {
@@ -25,7 +25,7 @@ class Solution {
         }
 
         var res = 0
-        println(hill.map { it })
+
         for(i in 1 until num.size - 1) {
             if (hill[i] != hill[i - 1] && hill[i] != 0) {
                 res ++
