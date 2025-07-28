@@ -32,7 +32,6 @@ class KthLargest(
             }
         }
         if (size < k) size ++
-        print(temp)
         return temp[size - 1]
     }
 
