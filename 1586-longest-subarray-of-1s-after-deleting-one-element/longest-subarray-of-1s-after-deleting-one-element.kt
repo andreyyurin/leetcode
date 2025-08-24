@@ -17,9 +17,8 @@ class Solution {
         list.add(k)
 
         if (list.size == 1) return list.first() - 1
+        
         var s = Int.MIN_VALUE
-
-        println(list)
         for (i in 0 until list.size) {
             var l = 0
             if (i + 1 < list.size) {
